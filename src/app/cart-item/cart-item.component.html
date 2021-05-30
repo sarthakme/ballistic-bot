@@ -1,0 +1,33 @@
+<div class="grid-container">
+    <img src="{{ cartItem.product.url }}" />
+    <div>
+        <div class="text">
+            <strong>
+                {{ cartItem.product.name }}
+            </strong>
+        </div>
+        <br />
+        <div class="text">${{ cartItem.product.price }}</div>
+        <br />
+        <div>
+            Amount:
+            <select
+                name="amountSelect"
+                [(ngModel)]="cartItem.amount"
+                (ngModelChange)="setAmount(cartItem, cartItem.amount)"
+            >
+                <option *ngFor="let j of arr; index as i" [ngValue]="i + 1">
+                    {{ i + 1 }}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <input
+            type="button"
+            value="--"
+            class="remove"
+            (click)="removeItem(cartItem)"
+        />
+    </div>
+</div>

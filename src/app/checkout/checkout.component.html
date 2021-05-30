@@ -1,0 +1,39 @@
+<div *ngIf="empty; else elseBlock">Cart is empty</div>
+
+<ng-template #elseBlock>
+    <div class="form-container">
+        <form #checkoutForm="ngForm" (ngSubmit)="onSubmit()">
+            E-mail:
+            <input
+                type="email"
+                name="email"
+                minlength="5"
+                [(ngModel)]="email"
+                placeholder="Optional"
+            />
+            <br />
+            <br />
+            Mobile:
+            <input required minlength="7" [(ngModel)]="mobile" name="mobile" />
+            <br />
+            <br />
+            Credit card number:
+            <br />
+            <input
+                required
+                minlength="16"
+                maxlength="16"
+                placeholder="16 charcters, no spaces"
+                [(ngModel)]="card"
+                name="card"
+            />
+            <br />
+            <br />
+            <input
+                type="submit"
+                [disabled]="checkoutForm.invalid"
+                value="Place order"
+            />
+        </form>
+    </div>
+</ng-template>

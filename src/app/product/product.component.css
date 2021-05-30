@@ -1,0 +1,20 @@
+.grid-item {
+    height: 30vw;
+    text-align: center;
+}
+
+img {
+    height: 80%;
+    width: 80%;
+    margin-bottom: 10px;
+    border: 1px solid rgb(0, 0, 100);
+}
+
+select {
+    border-radius: 10px;
+    border: 2px solid rgb(0, 0, 100);
+    width: 70px;
+    margin-bottom: 5px;
+    color: rgb(0, 0, 100);
+    background-color: rgb(220, 255, 255);
+}

@@ -1,0 +1,22 @@
+<div class="grid-item">
+    <img src="{{ cartItem.product.url }}" (click)="showDetails(product)" />
+    <br />
+    <div class="text" (click)="showDetails(product)">
+        <strong>
+            {{ cartItem.product.name }}
+        </strong>
+    </div>
+    <br />
+    <div class="text">${{ cartItem.product.price }}</div>
+    <br />
+    <form (ngSubmit)="submitForm()">
+        Amount:
+        <select name="amountSelect" [(ngModel)]="cartItem.amount">
+            <option *ngFor="let j of arr; index as i" [ngValue]="i + 1">
+                {{ i + 1 }}
+            </option>
+        </select>
+        <br />
+        <input type="submit" value="Add to cart" />
+    </form>
+</div>

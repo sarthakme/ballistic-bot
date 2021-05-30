@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Verdana, sans-serif;
+    background-color: rgb(220, 255, 255);
+    color: rgb(0, 0, 100);
+}
+
+input {
+    color: rgb(0, 0, 100);
+    background-color: rgb(220, 255, 255);
+    border: 2px solid rgb(0, 0, 100);
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+}

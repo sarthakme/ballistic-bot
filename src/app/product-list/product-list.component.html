@@ -1,0 +1,15 @@
+<div *ngIf="details; else detailBlock">
+    <app-product-details
+        [id]="id"
+        (eventEmitter)="invert()"
+    ></app-product-details>
+</div>
+<ng-template #detailBlock>
+    <div class="grid-container">
+        <app-product
+            *ngFor="let product of productList"
+            [product]="product"
+            (eventEmitter)="showDetails(product)"
+        ></app-product>
+    </div>
+</ng-template>

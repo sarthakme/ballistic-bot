@@ -1,0 +1,20 @@
+<h2>Your cart total: ${{ total }}</h2>
+
+<div id="cart">
+    <app-cart-item
+        *ngFor="let cartItem of cart"
+        [cartItem]="cartItem"
+        (eventEmitter)="setAmount($event)"
+        (nullEmitter)="removeItem()"
+    ></app-cart-item>
+    <div *ngIf="notEmpty; else emptyCart">
+        <form>
+            <a routerLink="/checkout">
+                <input type="button" value="Proceed to checkout" />
+            </a>
+        </form>
+    </div>
+    <ng-template #emptyCart>
+        <div>Your cart is empty!</div>
+    </ng-template>
+</div>

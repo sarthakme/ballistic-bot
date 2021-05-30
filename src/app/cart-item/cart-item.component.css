@@ -1,0 +1,30 @@
+img {
+    width: 10vw;
+    border: solid 1px rgb(0, 0, 100);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.input {
+    width: 25px;
+    padding-left: 10px;
+}
+
+.remove {
+    background-color: red;
+    -webkit-text-stroke: 1px rgb(0, 0, 100);
+}
+
+select {
+    border-radius: 10px;
+    border: 2px solid rgb(0, 0, 100);
+    width: 70px;
+    margin-bottom: 5px;
+    color: rgb(0, 0, 100);
+    background-color: rgb(220, 255, 255);
+}

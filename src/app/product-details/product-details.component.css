@@ -1,0 +1,25 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+img {
+    width: 20vw;
+    border: solid 1px rgb(0, 0, 100);
+}
+
+select {
+    border-radius: 10px;
+    border: 2px solid rgb(0, 0, 100);
+    width: 70px;
+    margin-bottom: 5px;
+    color: rgb(0, 0, 100);
+    background-color: rgb(220, 255, 255);
+}
