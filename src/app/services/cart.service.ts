@@ -10,7 +10,7 @@ export class CartService {
     constructor() {}
 
     addToCart(cartItem: CartItem): void {
-		//If an item is lready present in the cart, only the amount be added
+        //If an item is lready present in the cart, only the amount be added
         for (let i of this.cart) {
             if (i.product.id == cartItem.product.id) {
                 i.amount += cartItem.amount;
@@ -32,7 +32,7 @@ export class CartService {
     }
 
     setAmount(cartItem: CartItem, newAmount: number): void {
-		//This function is invoked from the cart to directly change the amount of an item.
+        //This function is invoked from the cart to directly change the amount of an item.
         for (let i of this.cart) {
             if (i.product.id === cartItem.product.id) {
                 i.amount = Number(newAmount);
@@ -52,7 +52,7 @@ export class CartService {
     }
 
     clear(): void {
-		//This function is called after the user submits the checkout form.
+        //This function is called after the user submits the checkout form.
         this.cart = [];
     }
 }

@@ -7,10 +7,11 @@ import { CartService } from '../services/cart.service';
     styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent implements OnInit {
-    email: string = '';
-    mobile: number | null = null;
+    fname: string = '';
+    add: string = '';
     card: number | null = null;
     empty: boolean = true;
+    done: boolean = false;
 
     constructor(private cartService: CartService) {}
 
@@ -19,10 +20,10 @@ export class CheckoutComponent implements OnInit {
     }
 
     onSubmit(): void {
-        alert('Your order has been placed!');
         this.cartService.clear();
-        this.email = '';
-        this.mobile = null;
+        this.fname = '';
+        this.add = '';
         this.card = null;
+        this.done = true;
     }
 }

@@ -10,7 +10,7 @@ import { CartService } from '../services/cart.service';
 })
 export class ProductComponent implements OnInit {
     @Input() product: Product;
-	//Used to determine which item needs to be expanded
+    //Used to determine which item needs to be expanded
     @Output() eventEmitter: EventEmitter<number> = new EventEmitter();
     cartItem: CartItem;
 

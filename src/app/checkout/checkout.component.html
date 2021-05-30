@@ -1,39 +1,48 @@
-<div *ngIf="empty; else elseBlock">Cart is empty</div>
-
-<ng-template #elseBlock>
-    <div class="form-container">
-        <form #checkoutForm="ngForm" (ngSubmit)="onSubmit()">
-            E-mail:
-            <input
-                type="email"
-                name="email"
-                minlength="5"
-                [(ngModel)]="email"
-                placeholder="Optional"
-            />
-            <br />
-            <br />
-            Mobile:
-            <input required minlength="7" [(ngModel)]="mobile" name="mobile" />
-            <br />
-            <br />
-            Credit card number:
-            <br />
-            <input
-                required
-                minlength="16"
-                maxlength="16"
-                placeholder="16 charcters, no spaces"
-                [(ngModel)]="card"
-                name="card"
-            />
-            <br />
-            <br />
-            <input
-                type="submit"
-                [disabled]="checkoutForm.invalid"
-                value="Place order"
-            />
-        </form>
+<div *ngIf="done; else notDoneBlock">
+    <div>Order has been successfully placed!</div>
+    <div>
+        To continue shopping with us go back to our
+        <a routerLink="/">catalogue</a>
     </div>
+</div>
+
+<ng-template #notDoneBlock>
+    <div *ngIf="empty; else elseBlock">Cart is empty</div>
+
+    <ng-template #elseBlock>
+        <div class="form-container">
+            <form #checkoutForm="ngForm" (ngSubmit)="onSubmit()">
+                Full Name:
+                <input name="name" minlength="3" required [(ngModel)]="fname" />
+                <br />
+                <br />
+                Address:
+                <textarea
+                    required
+                    minlength="10"
+                    [(ngModel)]="add"
+                    name="address"
+                ></textarea>
+                <br />
+                <br />
+                Credit card number:
+                <br />
+                <input
+                    required
+                    minlength="16"
+                    maxlength="16"
+                    placeholder="16 charcters, no spaces"
+                    [(ngModel)]="card"
+                    name="card"
+                />
+                <br />
+                <br />
+                <input
+                    type="submit"
+                    [disabled]="checkoutForm.invalid"
+                    value="Place order"
+                />
+            </form>
+        </div>
+    </ng-template>
 </ng-template>

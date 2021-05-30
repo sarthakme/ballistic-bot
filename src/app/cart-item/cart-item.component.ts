@@ -9,12 +9,12 @@ import { CartService } from '../services/cart.service';
 })
 export class CartItemComponent implements OnInit {
     @Input() cartItem: CartItem;
-	//Used to change the amount of an item from the cart itself
+    //Used to change the amount of an item from the cart itself
     @Output() eventEmitter: EventEmitter<{
         cartItem: CartItem;
         newAmount: number;
     }> = new EventEmitter();
-	//Used to update the total when an item is removed
+    //Used to update the total when an item is removed
     @Output() nullEmitter: EventEmitter<null> = new EventEmitter();
     arr = new Array(12);
 
